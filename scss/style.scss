@@ -1,0 +1,210 @@
+@import "./nullstyle";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+body {
+  background-color: blanchedalmond;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 327px;
+  margin: 0 auto;
+}
+.weather-widget {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 375px;
+  background: #fff;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+  }
+
+  .search {
+    input {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      border: 1px solid #ababab;
+      padding: 18px 15px;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      color: #000;
+
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        display: inline-block;
+        background: url("../img/cross-icon.svg");
+        position: absolute;
+        right: 24px;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    .selected-city {
+      font-weight: 300;
+      font-size: 10px;
+      margin: 8px 0 8px 15px;
+      letter-spacing: 0.02em;
+      color: #676767;
+    }
+  }
+
+  .today-weather {
+    display: flex;
+    align-items: center;
+    margin: 0 0 26px 0;
+    width: 100%;
+    height: 105px;
+    border-radius: 10px;
+    background-color: #ff4f00;
+    padding: 0 10px;
+
+    .today-temperature {
+      width: 97px;
+      margin: 0 30px 0 0;
+      padding: 6px 0 0 0;
+
+      .current-temperature {
+        font-weight: 700;
+        font-size: 54px;
+        letter-spacing: -0.06em;
+        color: #fff;
+      }
+
+      .second-temperature {
+        padding: 5px 20px 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        &-status {
+          font-size: 14px;
+          letter-spacing: 0.02em;
+          color: #fff;
+        }
+
+        &-value {
+          font-weight: 500;
+          font-size: 17px;
+          color: #fff;
+        }
+      }
+    }
+
+    .today-info {
+      margin: 5px 10px 0 0;
+      width: 82px;
+      height: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+
+      .today-sky-status {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 146%;
+        letter-spacing: 0.02em;
+        color: #fff;
+      }
+
+      .today-location {
+        font-size: 14px;
+        line-height: 146%;
+        letter-spacing: 0.02em;
+        color: #fff;
+      }
+    }
+  }
+
+  .forecast-row {
+    display: flex;
+    flex-direction: column;
+
+    .forecast-item {
+      display: flex;
+      width: 100%;
+      height: 85px;
+      padding: 4px 0 7px 0;
+      align-items: center;
+      border-top: 1px solid #ddd;
+
+      .item-day {
+        width: 40px;
+        font-size: 17px;
+        letter-spacing: 0.02em;
+        margin: 0 35px 0 0;
+      }
+
+      .item-weather-icon {
+        margin: 0 6px 0 0;
+        width: 90px;
+        height: 74px;
+      }
+
+      .weather-status-text {
+        width: 82px;
+        text-align: center;
+        margin: 0 34px 0 0;
+      }
+
+      .daily-status {
+        width: 40px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        &-day {
+          font-size: 9px;
+          letter-spacing: 0.02em;
+        }
+
+        &-day-temperature {
+          font-weight: 500;
+        }
+
+        &-night-temperature {
+          font-weight: 500;
+        }
+
+        &-night {
+          font-size: 9px;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+  }
+
+  .preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 718px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+
+    img {
+      animation: spin 2s linear infinite;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
